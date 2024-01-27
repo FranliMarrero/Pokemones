@@ -2,7 +2,6 @@ $(document).ready(function() {
     $('#Buscar-poke').click(function() {
         let nombrePokemon = $('#Buscar').val().toLowerCase();
 
-        // NOS PREGUNTAMOS SI EXISTE O NO ES VACIO
         if (nombrePokemon) {
             buscarPokemon(nombrePokemon);
         };    
@@ -24,7 +23,6 @@ $(document).ready(function() {
     }
 
     function renderPokeData(data) {
-        // Eliminar el div auxiliar
         $('.card').remove();
 
         let div = $('<div></div>');
@@ -43,12 +41,12 @@ $(document).ready(function() {
         let body = $('<div></div>');
         body.addClass('card-body');
 
-        // LOGICA PARA MOSTRAR LOS TIPOS
+        // MOSTRAR LOS TIPOS
         let pokeType = data.types;
         let tipos = '';
 
         pokeType.forEach(function(type, index, array) {
-            // SI NO ES EL ULTIMO AGREGO GUION
+    
             if (index < array.length - 1) {
                 tipos += `${type['type']['name']} - `.toUpperCase();
             }
